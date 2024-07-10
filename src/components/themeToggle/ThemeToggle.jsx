@@ -20,14 +20,14 @@ const ThemeToggle = () => {
       }
     }
     >
-      <Image src="/moon.png" alt="" width={14} height={14}/>
+      <Image src="/moon.png" alt="" width={18} height={18}/>
       <div className={styles.ball} 
       style={
         theme === "light" ?
         {right: 1, background: "white"} :
         {left: 1, background: "#0f172a"}
       }></div>
-      <Image src="/sun.png" alt="" width={14} height={14}/>
+      <Image src="/sun.png" alt="" width={18} height={18}/>
     </div>
   )
 }

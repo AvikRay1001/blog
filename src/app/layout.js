@@ -4,6 +4,15 @@ import { Inter } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 import { ThemeContextProvider } from '@/context/ThemeContext'
 import ThemeProvider from '@/providers/ThemeProvider'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+if (typeof window !== 'undefined') {
+  AOS.init({
+    duration: 1000,
+    offset: 100,
+  });
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        
         <ThemeContextProvider>
           <ThemeProvider>
           <div className="container">

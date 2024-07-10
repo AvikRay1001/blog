@@ -5,24 +5,56 @@
     height: 100px;
 }
 
-.social{
+/* .social{
     display: flex;
     gap: 10px;
     flex: 1;
-}
+} */
 
 .logo{
-    flex: 2;
+    display: flex;
+    justify-content: flex-start;
     text-align: center;
-    font-size: 36px;
+    font-size: 50px;
     font-weight: bold;
+    background: radial-gradient(circle,dodgerblue,red);
+    background-clip: text;
+    color: transparent;
+    animation: logo 15s linear infinite;
+    background-size: 200% 200%;
+    font-family: Times, Times New Roman, serif;
+    font-style: oblique;
+}
+
+@keyframes logo {
+    
+    0%{
+        background-position: 0% 0%;
+    }
+    
+    50%{
+        background-position: 100% 100%;
+    }
+    
+    100%{
+        background-position: 0% 0%;
+    }
 }
 
 .links{
     align-items: center;
     display: flex;
-    gap: 20px;
-    flex: 1;
+    gap: 30px;
+    justify-content: flex-end;
+}
+
+
+
+.link{
+    border: solid 1px;
+    border-color: var(--textColor);
+    padding: 10px;
+    box-shadow: -7px 7px 0px var(--textColor);
 }
 
 @media screen and (max-width: 1280px) {
