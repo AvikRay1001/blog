@@ -8,13 +8,14 @@
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
+    position: relative;
 }
 
 .adminNav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 955px;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     max-height: 60px;
@@ -31,4 +32,36 @@
 
 .image{
     border-radius: 50%;
+}
+
+
+@media screen and (max-width: 640px){
+    .adminNav{
+        width: 245px ;
+    }
+}
+
+@media screen and (max-width: 788px){
+    .adminNav{
+        width: 70% !important;
+        border-left: 1px solid var(--textColor);
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .adminNav{
+        width:430px ;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    .adminNav{
+        max-width: 615px ;
+    }
+}
+
+@media screena and (max-width:1536px){
+    .adminNav{
+        max-width: 5px ; 
+    }
 }

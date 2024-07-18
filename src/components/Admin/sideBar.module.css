@@ -8,14 +8,15 @@
 
 .sidebarContainer{
     width: 20rem;
-    @media (min-width: 640px) {
-        width: -80px;
+    @media (max-width: 640px) {
+        width: 10rem;
     }
     height: 100vh;
     position: relative;
     padding-top: 6rem;
     padding-bottom: 3rem;
     border: 1px solid var(--textColor);
+    background-color: var(--bg);
 }
 
 .sidebarWrapper{
@@ -26,6 +27,7 @@
     position: absolute;
     margin-left: 2rem;
     margin-right: 2.5rem;
+    
 }
 
 .component{
@@ -41,4 +43,17 @@
     padding-bottom: 0.5rem;
     background-color: var(--bg);
     box-shadow: -5px 5px 0px var(--textColor);
+}
+
+@media screen and (max-width: 785px){
+    .container{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .sidebarContainer{
+        width: 15rem;
+    }
+
 }

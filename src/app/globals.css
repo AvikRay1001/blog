@@ -40,8 +40,7 @@ a{
     min-height: 100vh;
     background-color: var(--bg);
     color: var(--textColor);
-    background-image: var(--image)
-
+    background-image: var(--image);
 }
 
 .wrapper{
@@ -54,19 +53,19 @@ a{
 
 @media screen and (max-width: 1536px) {
     .wrapper {
-      max-width: 1366px;
+      max-width: 1366px !important;
     }
   }
 
 @media screen and (max-width: 1280px) {
     .wrapper {
-      max-width: 1024px;
+      max-width: 1024px !important;
     }
   }
 
 @media screen and (max-width: 1024px) {
     .wrapper {
-      max-width: 768px;
+      max-width: 768px !important;
       padding-left: 40px;
       padding-right: 40px;
     }
@@ -74,7 +73,7 @@ a{
 
 @media screen and (max-width: 768px) {
     .wrapper {
-      max-width: 640px;
+      max-width: 640px !important;
     }
   }
 

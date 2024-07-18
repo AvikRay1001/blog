@@ -29,6 +29,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-left: 20px;
   }
   
   .addButton {
@@ -36,6 +37,7 @@
   }
   
   .add {
+    margin-left: 10px;
     display: flex;
     gap: 20px;
     background-color: var(--bg);
@@ -64,8 +66,8 @@
   
   .publish{
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 20px;
+    right: 10px;
     padding: 10px 20px;
     border: none;
     background-color: #1a8917;
@@ -77,3 +79,36 @@
   .image{
     color: var(--textColor);
   }
+
+  @media screen and (max-width: 640px){
+    .input,.editor{
+        width: 545px ;
+    }
+}
+
+@media screen and (max-width: 788px){
+  .container{
+      width: 87% !important;
+  }
+  /* .input,.editor{
+    width: ;
+  } */
+}
+
+@media screen and (max-width: 1024px){
+  .input,.editor{
+      width:350px ;
+  }
+}
+
+@media screen and (max-width: 1280px){
+  .editor,.input{
+      max-width: 615px ;
+  }
+}
+
+@media screena and (max-width:1536px){
+  .input,.container{
+      max-width: 5px ; 
+  }
+}

@@ -12,9 +12,10 @@ export default function Layout({children}){
                         <h3 className={styles.title}>Admin Panel</h3>
                         <Image src='/p1.jpeg' alt="" width={40} height={40} className={styles.image}/>
                     </div>
+                    {children}
                 </div>
             </div>
-            {children}
+           
         </>
 
     )

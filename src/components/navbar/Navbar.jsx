@@ -20,6 +20,7 @@ const Navbar = () => {
       <div className={styles.logo}>BlogTimes</div>
 
       <div className={styles.links}>
+        
         <ThemeToggle/>
         <Link href="/" className={styles.link}>HomePage</Link>
         <Link href="/" className={styles.link}>Contact</Link>
