@@ -15,12 +15,12 @@ const getData = async (page, cat) => {
     }
 
     const jsonData = await res.json();
-    console.log(jsonData);
+    console.log(jsonData.posts,jsonData.cat);
 
-    if (!Array.isArray(jsonData)) {
-      console.warn("Expected an array, got:", jsonData);
-      return []; 
-    }
+    // if (!Array.isArray(jsonData)) {
+    //   console.warn("Expected an array, got:", jsonData);
+    //   return []; 
+    // }
 
     return jsonData;
 
@@ -33,19 +33,19 @@ const getData = async (page, cat) => {
 
 
 const CardList = async ({ page, cat }) => {
-  const posts = await getData(page, cat);
-  console.log(posts);
+  const data = await getData(page, cat);
+  console.log(data);
 
   const POST_PER_PAGE = 2;
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
-  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < 6;
+  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < data.count;
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts}>
-        {posts?.map((item) => (
+        {data.posts?.map((item) => (
           <Card item={item} key={item._id} />
         ))}
       </div>

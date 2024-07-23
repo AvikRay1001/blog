@@ -8,13 +8,10 @@ export const GET = async (req) => {
   const page = parseInt(searchParams.get("page"), 10) || 1;
   let cat = searchParams.get("cat");
 
-  // Check if 'cat' is an object and convert it to a string or leave it as an empty string
-  // cat = typeof cat === 'object' && !Array.isArray(cat) ? JSON.stringify(cat) : cat || "";
   if (cat === 'undefined'){
     cat = "";
   }
-  console.log(page);
-  console.log(cat);
+
 
   const POST_PER_PAGE = 2;
 
@@ -31,8 +28,9 @@ export const GET = async (req) => {
 
   try {
     const posts = await prisma.post.findMany(query);
+    const count = await prisma.post.count({where: query.where});
     console.log(posts);
-    return new NextResponse(JSON.stringify(posts, { status: 200 }));
+    return new NextResponse(JSON.stringify({posts,count}, { status: 200 }));
   } catch (err) {
     console.log(err);
     return new NextResponse(
