@@ -16,12 +16,12 @@ const getData = async () => {
       throw new Error("Failed");
     }
 
-    const jsonString = await res.json(); // Get the raw JSON string
-    const jsonData = JSON.parse(jsonString); // Parse the JSON string into JS object/array
+    const jsonString = await res.json();
+    const jsonData = JSON.parse(jsonString); 
 
     if (!Array.isArray(jsonData)) {
       console.warn("Expected an array, got:", jsonData);
-      return []; // Safely return an empty array if not an array
+      return []; 
     }
 
     return jsonData;
@@ -34,7 +34,7 @@ const getData = async () => {
 
 
 const CategoryList = () => {
- 
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const CategoryList = () => {
     fetchData();
   }, []);
 
-  console.log(data);
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>

@@ -8,8 +8,6 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiImageOn } from "react-icons/ci";
 import { FaUpload } from "react-icons/fa";
 import { MdOutlineOndemandVideo } from "react-icons/md";
-import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/react'
 
 
 const WritePage = () => {
@@ -17,18 +15,6 @@ const WritePage = () => {
 
   const [open, setopen] = useState(false);
   const [value, setvalue] = useState("");
-
-  const {status} = useSession();
-
-  const router = useRouter();
-
-
-  if(status === 'loading'){
-    return <div className={styles.loading}>Loading...</div>
-  }
-  if(status === 'authenticated'){
-    router.push("/")
-  }
 
   return (
     <div className={styles.container}>
