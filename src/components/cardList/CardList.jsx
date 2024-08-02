@@ -15,12 +15,6 @@ const getData = async (page, cat) => {
     }
 
     const jsonData = await res.json();
-    console.log(jsonData.posts,jsonData.cat);
-
-    // if (!Array.isArray(jsonData)) {
-    //   console.warn("Expected an array, got:", jsonData);
-    //   return []; 
-    // }
 
     return jsonData;
 
@@ -34,7 +28,6 @@ const getData = async (page, cat) => {
 
 const CardList = async ({ page, cat }) => {
   const data = await getData(page, cat);
-  console.log(data);
 
   const POST_PER_PAGE = 2;
 
