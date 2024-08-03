@@ -26,7 +26,6 @@ export const GET = async (req) => {
   try {
     const posts = await prisma.post.findMany(query);
     const count = await prisma.post.count({where: query.where});
-    console.log(posts);
     return new NextResponse(JSON.stringify({posts,count}, { status: 200 }));
   } catch (err) {
     console.log(err);
