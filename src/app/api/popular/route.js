@@ -14,27 +14,23 @@ export const GET = async (req) => {
 
   const POST_PER_PAGE = 4;
 
+  
   let query = {
     take: POST_PER_PAGE,
     where: {},
     orderBy: {},
+    include: { user: true}
   };
 
-  // let query = {
-  //   take: POST_PER_PAGE,
-  //   skip: POST_PER_PAGE * (page - 1),
-  //   where: {
-  //    ...(cat && { catSlug: cat }),
-  //   },
-  // };
 
   try {
     if (fetchType === "editors-pick") {
-      // Fetch editor's pick posts
-      query.where = { ...query.where, isEditorPick: true }; // Assuming isEditorPick field exists
-      query.orderBy = { createdAt: 'desc' }; // Optional: order by creation date
+
+      query.where = { ...query.where, isEditorPick: true };
+      query.orderBy = { createdAt: 'desc' };
+
     } else if (fetchType === "most-views") {
-      // Fetch most viewed posts
+
       query.orderBy = { views: 'desc' };
     }
 

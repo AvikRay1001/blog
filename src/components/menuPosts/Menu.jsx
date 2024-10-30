@@ -24,6 +24,7 @@ import styles from "./menuPosts.module.css";
 //     fetchPosts();
 //   }, [withImage]);
 
+
 const getData = async ({ withImage }) => {
   try {
     const fetchType = withImage ? "editors-pick" : "most-views";
@@ -39,7 +40,6 @@ const getData = async ({ withImage }) => {
     }
 
     const jsonData = await res.json();
-    console.log(jsonData);
 
     return jsonData;
 
@@ -50,7 +50,7 @@ const getData = async ({ withImage }) => {
 };
 
 
-const MenuPosts = async({ withImage }) => {
+const MenuPosts = async( withImage ) => {
 
   const data = await getData(withImage);
   console.log("Data:",data);
@@ -59,15 +59,25 @@ const MenuPosts = async({ withImage }) => {
     <div className={styles.items}>
       {data.posts.map((item) => (
         <Link href='/' key={item.id} className={styles.item}>
-          {withImage && item.img && (
+          {withImage && ( item.img ? (
+            <div className={styles.imageContainer}>
+            <Image
+              src={item.img}
+              alt={item.title}
+              layout="fill"
+              className={styles.image}
+            />
+          </div>
+          ) : (
             <div className={styles.imageContainer}>
               <Image
-                src={item.img}
+                src={item.user.image}
                 alt={item.title}
                 layout="fill"
                 className={styles.image}
               />
             </div>
+            )
           )}
           <div className={styles.textContainer}>
             <span className={`${styles.category} ${styles[item.catSlug]}`}>
