@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import styles from "./writePage.module.css";
 import "react-quill/dist/quill.bubble.css";
 import { IoIosAddCircleOutline } from "react-icons/io";
@@ -10,7 +11,6 @@ import { MdOutlineOndemandVideo } from "react-icons/md";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import {
-
   getStorage,
   ref,
   uploadBytesResumable,
@@ -57,11 +57,10 @@ const WritePage = () => {
           }
         },
         (error) => {
-          // Handle unsuccessful uploads
+          
         },
         () => {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+          
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setmedia(downloadURL);
           });
