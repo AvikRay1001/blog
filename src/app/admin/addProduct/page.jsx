@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./writePage.module.css";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiImageOn } from "react-icons/ci";
@@ -24,6 +23,8 @@ const storage = getStorage(app);
 
 const WritePage = () => {
   const { status } = useSession();
+  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
   const router = useRouter();
 
   const [open, setopen] = useState(false);
